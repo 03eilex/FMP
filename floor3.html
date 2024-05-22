@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./floor3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton:wght@400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monomaniac One:wght@400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" />
+</head>
+
+<body>
+  <div class="floor3">
+    <header class="floor3tborder">
+      <div id="logoutButton" class="logoutButton">
+        <button>OUT</button>
+      </div>
+      <div class="frame-parent">
+        <div id="home" class="logo-wrapper">
+          <img class="logo-icon" loading="lazy" alt="" src="./image-1@2x.png" />
+        </div>
+        <div class="fmp">FMP</div>
+      </div>
+      <div id="borderf1" class="borderf1-parent">
+        <img class="borderf1-icon" loading="lazy" alt="" />
+        <b class="f1">1F</b>
+      </div>
+      <div id="borderf2" class="borderf2-parent">
+        <img class="borderf2-icon" loading="lazy" alt="" />
+        <b class="f2">2F</b>
+      </div>
+      <div id="borderf3" class="borderf3-parent">
+        <img class="borderf3-icon" loading="lazy" alt="" />
+
+        <b class="f3">3F</b>
+      </div>
+      <div id="borderf4" class="borderf4-parent">
+        <img class="borderf4-icon" loading="lazy" alt="" />
+
+        <b class="f4">4F</b>
+      </div>
+    </header>
+    <div class="parklotborder"></div>
+    <div class="floor31">
+      <div class="floor3ground"></div>
+      <div class="f3rooms">
+        <div class="rightroom">
+          <div class="ict3e">
+            <div class="researchlab">
+              <b class="rltxt">
+                <p class="research">Research</p>
+                <p class="laboratory">Laboratory</p>
+              </b>
+            </div>
+            <div class="masterslab">
+              <b class="mltxt">
+                <p class="masters">Masters</p>
+                <p class="laboratory1">Laboratory</p>
+              </b>
+            </div>
+            <div class="embeddedlab">
+              <b class="eltxt">
+                <p class="embedded">Embedded</p>
+                <p class="laboratory2">Laboratory</p>
+              </b>
+            </div>
+            <div class="toolroom">
+              <b class="toolroomtxt">Tool Room</b>
+            </div>
+          </div>
+          <div class="ict3h">
+            <b class="ict3htxt">ICT-3H</b>
+          </div>
+        </div>
+        <div class="f3stair1">
+          <img class="f3stair1ground-icon" alt="" src="./f3stair1ground.svg" />
+
+          <img class="f3stair1-icon" alt="" src="./pf3stair1@2x.png" />
+
+          <div class="f3stair1att">
+            <img class="uparrow-icon" alt="" src="./up-arrow@2x.png" />
+              <p class="f2txt">2ND FLOOR</p>
+          </div>
+        </div>
+        <div id="f3stair2Button" class="f3stair2">
+          <div class="f3stair2ground">
+            <img class="f3stair2-icon" alt="" src="./f3stair2.svg" />
+            <div class="upf4">
+              <img class="uparrow-icon1" alt="" src="./up-arrow@2x.png" />
+              <p class="f4txt">4TH FLOOR</p>
+            </div>
+          </div>
+        </div>
+        <div class="leftroom">
+          <div id="ict3aBase" class="ict3a" onclick="toggleClass()">
+            <b class="ict3atxt">ICT-3A</b>
+          </div>
+          <div id="ict3aChange" class="ict3aChange" onclick="toggleClass()">
+            <div class="text-container">
+              <b class="ict3atxtChange">ICT-3A</b>
+            </div>
+          </div>
+          <div class="ict3b">
+            <b class="ict3btxt">ICT-3B</b>
+          </div>
+          <div class="ict3c">
+            <b class="ict3ctxt">ICT-3C</b>
+          </div>
+          <div class="ict3d">
+            <b class="ict3dtxt">ICT-3D</b>
+          </div>
+        </div>
+      </div>
+      <div class="floor3-child"></div>
+    </div>
+  </div>
+  <script>
+    function toggleClass() {
+      var ict3a = document.getElementById("ict3aBase");
+      var ict3aChange = document.getElementById("ict3aChange");
+
+      ict3a.classList.toggle("ict3aChange");
+      ict3aChange.classList.toggle("ict3a");
+    }
+
+
+    document.getElementById("home").addEventListener("click", function () {
+      window.location.href = "home.html";
+    });
+    document.getElementById("borderf3").addEventListener("click", function () {
+      window.location.href = "floor3.html";
+    });
+    document.getElementById("borderf4").addEventListener("click", function () {
+      window.location.href = "floor4.html";
+    });
+    document.getElementById("f3stair2Button").addEventListener("click", function () {
+      window.location.href = "floor4.html";
+    });
+    document.getElementById("logoutButton").addEventListener("click", function () {
+      localStorage.clear();
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+
+</html>

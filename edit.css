@@ -1,0 +1,255 @@
+.logoutButton {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    z-index: 9999;
+    /* Ensure it appears on top of other elements */
+}
+
+.logoutButton button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton button:hover {
+    filter: brightness(70%);
+}
+
+.borderf1-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf1-parent :hover {
+    filter: brightness(70%);
+}
+
+.borderf2-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf2-parent:hover {
+    filter: brightness(70%);
+}
+
+.borderf3-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf3-parent:hover {
+    filter: brightness(70%);
+}
+
+.borderf4-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf4-parent:hover {
+    filter: brightness(70%);
+}
+
+.borderf1-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.borderf2-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.borderf3-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.borderf4-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.floor3tborder {
+    align-self: stretch;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(90deg, teal, #fff);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 14.5px;
+    box-sizing: border-box;
+    top: 0;
+    z-index: 99;
+    position: sticky;
+    max-width: 100%;
+    text-align: left;
+    font-size: var(--font-size-37xl);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+}
+
+.logo-icon {
+    width: 85.3px;
+    height: 90px;
+    position: relative;
+    object-fit: cover;
+    mix-blend-mode: normal;
+    flex-shrink: 0;
+
+    z-index: 1;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6px 0 0;
+}
+
+.frame-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 134px 0 0;
+    box-sizing: border-box;
+    gap: 12.2px;
+    max-width: 100%;
+    font-size: 64px;
+    font-family: var(--font-monoton);
+}
+
+.fmp {
+    position: relative;
+    line-height: 100px;
+    background: linear-gradient(180deg, #3bd6d6, #fff);
+    background-clip: text;
+    font-family: 'Monoton', cursive;
+    -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+
+.f1, .f2, .f3, .f4{
+    position: absolute;
+    top: 18px;
+    left: 74px;
+    line-height: 68px;
+    display: inline-block;
+    font-size: 4em;
+    color: white;
+    text-shadow: 3px 0 0 #000, 0 3px 0 #000, -3px 0 0 #000, 0 -3px 0 #000;
+    min-width: 70px;
+    z-index: 2;
+}
+
+.parklotborder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dimgray);
+    height: 200px;
+    overflow-x: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    position: absolute;
+    top: 100%;
+    right: 42%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#editForm {
+    position: absolute;
+    top: 190%;
+    right: 44%;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    z-index: 3;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style for buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container button {
+    width: calc(32% - 5px);
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    display: none; /* Initially hide the message */
+}
+
+#message.show {
+    display: block; /* Show the message when it has the "show" class */
+}

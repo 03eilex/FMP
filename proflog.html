@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/proflog.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monomaniac+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" />
+    <title>Professor Log</title>
+    <style>
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .message.show {
+            display: block;
+        }
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .button-container button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="base">
+            <h1 class="log-in">Professor Log</h1>
+            <div class="divider-icon" loading="lazy" alt=""></div>
+            <div class="username">
+                <input id="usernameInput" class="type-here" placeholder="Professor Name" type="text" />
+                <input id="emailInput" class="type-here" placeholder="Email" type="text" />
+            </div>
+            <div class="availability">
+                <button class="availabilityButton" data-value="Busy">Busy</button>
+                <button class="availabilityButton" data-value="Available">Available</button>
+                <button class="availabilityButton" data-value="Not in School">Not in School</button>
+            </div>
+            <button id="submitButton" class="log-in1">Submit</button>
+        </div>
+        <main class="background-parent">
+            <section class="background"></section>
+            <img class="image-1-icon4" loading="lazy" alt="" src="/image-1-1@2x.png" />
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.availabilityButton').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.availabilityButton').forEach(btn => btn.style.border = '');
+                this.style.border = '2px solid teal';
+                document.getElementById('availabilityInput').value = this.getAttribute('data-value');
+            });
+        });
+
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const profnameInput = document.getElementById('usernameInput');
+            const emailInput = document.getElementById('emailInput');
+            const availabilityInput = document.getElementById('availabilityInput');
+            const profname = profnameInput.value.trim();
+            const email = emailInput.value.trim();
+            const availability = availabilityInput.value.trim();
+
+            // Reset input borders
+            profnameInput.style.border = '';
+            emailInput.style.border = '';
+
+            // Validate inputs
+            let isValid = true;
+            if (!profname) {
+                profnameInput.style.border = '2px solid red';
+                isValid = false;
+            }
+            if (!email) {
+                emailInput.style.border = '2px solid red';
+                isValid = false;
+            }
+            if (!availability) {
+                document.querySelectorAll('.availabilityButton').forEach(btn => btn.style.border = '2px solid red');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return; // Do not submit if validation fails
+            }
+
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ profname, email, availability }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display message without alert
+                const messageDiv = document.getElementById('message');
+                messageDiv.textContent = data.message;
+                messageDiv.className = 'message success show'; // Success message
+                // Reset fields and borders after successful submission
+                profnameInput.value = '';
+                emailInput.value = '';
+                availabilityInput.value = '';
+                document.querySelectorAll('.availabilityButton').forEach(btn => btn.style.border = '');
+                // Redirect to home.html after successful submission
+                window.location.href = '/home.html';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                const messageDiv = document.getElementById('message');
+                messageDiv.textContent = 'Failed to submit. Please try again.';
+                messageDiv.className = 'message error show'; // Error message
+            });
+        });
+    </script>
+    <input id="availabilityInput" type="hidden" />
+    <div id="message"></div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap">
+
+            <title>Edit Professor Availability</title>
+        
+            <link rel="stylesheet" href="edit.css"> <!-- Include your CSS file -->
+            <style>
+                /* Your existing CSS styles */
+                .database-records {
+                    position: absolute;
+                    top: 380%;
+                    left: 35%;
+                    background-color: #ffffff;
+                    padding: 20px;
+                    margin-top: 20px;
+                    border-radius: 15px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    max-width: 400px;
+                    width: 100%;
+                }
+
+                .database-records h2 {
+                    text-align: center;
+                    color: #333333;
+                    font-family: 'Rockwell', Georgia, serif;
+                }
+
+                #databaseRecords {
+                    margin-top: 20px;
+                }
+
+                .professor-record {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    background-color: #f9f9f9;
+                    border: 1px solid #dddddd;
+                }
+
+                .professor-record:nth-child(odd) {
+                    background-color: #f1f1f1;
+                }
+
+                .professor-name,
+                .professor-availability {
+                    font-size: 16px;
+                    color: #555555;
+                    font-family: 'Inter', sans-serif;
+                }
+            </style>
+            <header class="floor3tborder">
+                <div id="logoutButton" class="logoutButton">
+                    <button>OUT</button>
+                </div>
+                <div class="frame-parent">
+                    <div id="home" class="logo-wrapper">
+                        <img class="logo-icon" loading="lazy" alt="" src="./image-1@2x.png" />
+                    </div>
+                    <div class="fmp">FMP</div>
+                </div>
+                <div id="borderf1" class="borderf1-parent">
+                    <img class="borderf1-icon" loading="lazy" alt="" />
+                    <b class="f1">1F</b>
+                </div>
+                <div id="borderf2" class="borderf2-parent">
+                    <img class="borderf2-icon" loading="lazy" alt="" />
+                    <b class="f2">2F</b>
+                </div>
+                <div id="borderf3" class="borderf3-parent">
+                    <img class="borderf3-icon" loading="lazy" alt="" />
+
+                    <b class="f3">3F</b>
+                </div>
+                <div id="borderf4" class="borderf4-parent">
+                    <img class="borderf4-icon" loading="lazy" alt="" />
+
+                    <b class="f4">4F</b>
+                </div>
+        </head>
+
+        <body>
+            <h1>Edit Professor Availability</h1>
+            <div id="editForm">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                <label>Availability:</label>
+                <div class="button-container">
+                    <button onclick="updateAvailability('Available')">Available</button>
+                    <button onclick="updateAvailability('Busy')">Busy</button>
+                    <button onclick="updateAvailability('Not in School')">Not in School</button>
+                    <button onclick="deleteRecord()">Delete</button> <!-- New delete button -->
+                </div>
+            </div>
+            <div id="message" class="message"></div>
+            <div class="database-records">
+                <h2>Professor Records</h2>
+                <div id="databaseRecords"></div>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", fetchRecords);
+
+                function updateAvailability(status) {
+                    const email = document.getElementById('email').value;
+
+                    fetch('/update_availability', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            availability: status
+                        })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log(data); // Log the response from the server
+                            const messageElement = document.getElementById('message');
+                            messageElement.textContent = 'Record updated successfully';
+                            messageElement.classList.remove('error');
+                            messageElement.classList.add('show', 'success'); // Show the message
+                            fetchRecords(); // Refresh records
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                            const messageElement = document.getElementById('message');
+                            messageElement.textContent = 'Failed to update record. Please try again.';
+                            messageElement.classList.remove('success');
+                            messageElement.classList.add('show', 'error'); // Show the message
+                        });
+                }
+
+                function deleteRecord() {
+                    const email = document.getElementById('email').value;
+
+                    fetch('/delete_record', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: email
+                        })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log(data); // Log the response from the server
+                            const messageElement = document.getElementById('message');
+                            messageElement.textContent = 'Record deleted successfully';
+                            messageElement.classList.remove('error');
+                            messageElement.classList.add('show', 'success'); // Show the message
+                            fetchRecords(); // Refresh records
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                            const messageElement = document.getElementById('message');
+                            messageElement.textContent = 'Failed to delete record. Please try again.';
+                            messageElement.classList.remove('success');
+                            messageElement.classList.add('show', 'error'); // Show the message
+                        });
+                }
+
+                function fetchRecords() {
+                    fetch('/api/professors')
+                        .then(response => response.json())
+                        .then(data => {
+                            const recordsContainer = document.getElementById('databaseRecords');
+                            recordsContainer.innerHTML = '';
+                            data.forEach(professor => {
+                                const recordDiv = document.createElement('div');
+                                recordDiv.className = 'professor-record';
+                                recordDiv.innerHTML = `
+                                <div class="professor-name">${professor.profname}</div>
+                                <div class="professor-availability">${professor.availability}</div>
+                            `;
+                                recordsContainer.appendChild(recordDiv);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error fetching records:', error);
+                        });
+                }
+
+                document.getElementById("home").addEventListener("click", function () {
+                    window.location.href = "home.html";
+                });
+                document.getElementById("borderf3").addEventListener("click", function () {
+                    window.location.href = "floor3.html";
+                });
+                document.getElementById("borderf4").addEventListener("click", function () {
+                    window.location.href = "floor4.html";
+                });
+                document.getElementById("logoutButton").addEventListener("click", function () {
+
+                    window.location.href = "/proflog.html";
+                });
+            </script>
+        </body>
+
+        </html>

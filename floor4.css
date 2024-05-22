@@ -1,0 +1,389 @@
+.logoutButton {
+    position: fixed;
+    top: 4px;
+    right: 20px;
+    z-index: 9999;
+    /* Ensure it appears on top of other elements */
+}
+
+.logoutButton button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton button:hover {
+    filter: brightness(70%);
+}
+
+.borderf1-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf1-parent :hover {
+    filter: brightness(70%);
+}
+
+.borderf2-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf2-parent:hover {
+    filter: brightness(70%);
+}
+
+.borderf3-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf3-parent:hover {
+    filter: brightness(70%);
+}
+
+.borderf4-parent {
+    height: 104px;
+    width: 218px;
+    position: relative;
+}
+
+.borderf4-parent:hover {
+    filter: brightness(70%);
+}
+
+.borderf2-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.borderf3-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.borderf4-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.floor3tborder {
+    align-self: stretch;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(90deg, teal, #fff);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 14.5px;
+    box-sizing: border-box;
+    top: 0;
+    z-index: 99;
+    position: sticky;
+    max-width: 100%;
+    text-align: left;
+    font-size: var(--font-size-37xl);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+}
+
+.logo-icon {
+    width: 85.3px;
+    height: 90px;
+    position: relative;
+    object-fit: cover;
+    mix-blend-mode: normal;
+    flex-shrink: 0;
+
+    z-index: 1;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6px 0 0;
+}
+
+.frame-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 134px 0 0;
+    box-sizing: border-box;
+    gap: 12.2px;
+    max-width: 100%;
+    font-size: 64px;
+    font-family: var(--font-monoton);
+}
+
+.fmp {
+    position: relative;
+    line-height: 100px;
+    background: linear-gradient(180deg, #3bd6d6, #fff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.f1 {
+    position: absolute;
+    top: 18px;
+    left: 74px;
+    line-height: 68px;
+    display: inline-block;
+    text-shadow: 3px 0 0#000, 0 3px 0#000, -3px 0 0#000, 0-3px 0#000;
+    min-width: 70px;
+    z-index: 2;
+}
+
+.f2 {
+    position: absolute;
+    top: 18px;
+    left: 74px;
+    line-height: 68px;
+    display: inline-block;
+    text-shadow: 3px 0 0#000, 0 3px 0#000, -3px 0 0#000, 0-3px 0#000;
+    min-width: 70px;
+    z-index: 2;
+}
+
+.f3 {
+    position: absolute;
+    top: 18px;
+    left: 74px;
+    line-height: 68px;
+    display: inline-block;
+    text-shadow: 3px 0 0#000, 0 3px 0#000, -3px 0 0#000, 0-3px 0#000;
+    min-width: 70px;
+    z-index: 2;
+}
+
+.f4 {
+    position: absolute;
+    top: 18px;
+    left: 74px;
+    line-height: 68px;
+    display: inline-block;
+    text-shadow: 3px 0 0#000, 0 3px 0#000, -3px 0 0#000, 0-3px 0#000;
+    min-width: 71px;
+    z-index: 2;
+}
+
+.borderf1-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.parklotborder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-dimgray);
+    height: 200px;
+    overflow-x: auto;
+}
+
+.floor3ground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 50px 4px #b3b3b3;
+    background-color: var(--color-darksalmon);
+    width: 1783px;
+    height: 500px;
+}
+
+.f3rooms,
+.f3rooms {
+    top: 39px;
+    left: calc(50% - 797.5px);
+    width: 1586px;
+    overflow: hidden;
+    mix-blend-mode: normal;
+}
+
+.floor3-child {
+    position: absolute;
+    top: 412px;
+    left: 693px;
+    box-shadow: 0 20px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    background-color: var(--color-darksalmon);
+    width: 257px;
+    height: 176px;
+}
+
+.floor31 {
+    position: absolute;
+    top: 176px;
+    left: 68px;
+    border-radius: 0 var(--br-3xs) 0 0;
+    width: 1783px;
+    height: 617px;
+    overflow-x: auto;
+    font-size: var(--font-size-13xl);
+    color: var(--color-black);
+    z-index: 0;
+}
+
+.floor3 {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 1080px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-37xl);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+}
+
+.f4stair1-icon,
+.f4stair1ground-icon,
+.uparrow-icon {
+    position: absolute;
+    height: 100.68%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: -0.68%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.f4stair1-icon,
+.uparrow-icon {
+    height: 54.39%;
+    top: 46.28%;
+    object-fit: contain;
+}
+
+.uparrow-icon {
+    height: 46.41%;
+    width: 65%;
+    top: 53.59%;
+    right: 20.21%;
+    bottom: 0;
+    left: 14.79%;
+    object-fit: cover;
+}
+
+.f3txt {
+    position: absolute;
+    left: 5%;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+.f4stair1,
+.f4stair1att {
+    position: absolute;
+    top: 129px;
+    left: 0;
+    width: 94px;
+    height: 167px;
+}
+
+.f4stair1 {
+    top: 6.5%;
+    left: 730px;
+    height: 296px;
+    font-family: var(--font-monomaniac-one);
+}
+
+.f4stair1:hover {
+    filter: brightness(70%);
+}
+
+
+.f4stair2 {
+    position: absolute;
+    top: 6.5%;
+    right: 867px;
+    width: 94px;
+    height: 296px;
+    background: gray;
+    border-left: 1px solid #000;
+    border-radius: 0 100px 0 0;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.fab1 {
+    position: absolute;
+    top: 6%;
+    left: 30.5px;
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    /* Adjust background color as needed */
+    border: 3px solid var(--color-gray-300);
+    /* Adjust border properties as needed */
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.fab1txt {
+    position: absolute;
+    top: 128px;
+    left: 320px;
+    line-height: 121%;
+    font-size: 36px; 
+    color: var(--color-black); 
+    font-family: var(--font-inter); 
+}
+.fab1:hover{
+    filter: brightness(70%);
+}
+
+.fab2 {
+    position: absolute;
+    bottom: 0;
+    left: 92px;
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    /* Adjust background color as needed */
+    border: 3px solid var(--color-gray-300);
+    /* Adjust border properties as needed */
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.fab2txt {
+    position: absolute;
+    top: 128px;
+    left: 320px;
+    line-height: 121%;
+    font-size: 36px; 
+    color: var(--color-black); 
+    font-family: var(--font-inter); 
+}
+.fab2:hover{
+    filter: brightness(70%);
+}
+

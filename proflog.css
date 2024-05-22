@@ -1,0 +1,178 @@
+/* Global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  max-height: 800px; /* Limit the height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+}
+
+.log-in {
+  font-size: 5em; /* Adjust as needed */
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: -56%;
+}
+
+.divider-icon {
+  width: 50%;
+  height: 5px;
+  background-color: teal;
+  margin: 10px 0;
+  margin-bottom: 20%;
+  width: 50%; /* Adjusted width */
+  margin-left: -25%;
+}
+
+.username input {
+  width: 120%;
+  border: 1px solid var(--color-gray-100);
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: -60%;
+  margin-bottom: 10px;
+  border-radius: var(--br-6xl);
+  font-size: 1em;
+  color: black;
+  background-color: transparent;
+}
+
+.availability {
+  margin-left: -35%;
+  justify-content: space-between;
+  padding: 20px 0; /* Adjusted padding */
+  margin-bottom: 10px;
+}
+
+.availabilityButton {
+  background-color: lightseagreen;
+  border: 2px solid lightseagreen; /* Default border color */
+  color: white; /* Default text color */
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.availabilityButton:hover {
+  border-color: teal; /* Border color on hover */
+  color: teal; /* Text color on hover */
+}
+
+.availabilityButton.active {
+  border-color: teal; /* Active button border color */
+  background-color: royalblue;
+  color: teal; /* Active button text color */
+}
+
+.log-in1 {
+  width: 50%;
+  border: 1px solid var(--color-gray-100);
+  padding: 10px;
+  background-color: teal;
+  color: white;
+  border-radius: var(--br-6xl);
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: -28%;
+}
+
+.show {
+  font-size: 0.8em; /* Small font size */
+  padding: 5px 10px; /* Padding for a small button */
+  background-color: #a7f3d0; /* Light teal background color */
+  border: 1px solid #81e6d9; /* Slightly darker teal border */
+  border-radius: 5px; /* Rounded corners */
+  color: #065f46; /* Dark teal text color */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.log-in1:hover {
+  background-color: darkcyan;
+}
+
+.background-parent {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1500%;
+  max-width: 1287.4px;
+  height: 100%;
+  max-height: 800px; /* Limit the height */
+  overflow: hidden;
+  z-index: 1;
+  border: 10px solid var(--color-gray-100); /* Add border here */
+  box-sizing: border-box;
+}
+
+.background {
+  position: absolute;
+  top: 20%;
+  left: 95%;
+  width: 664px;  /* Updated width */
+  height: 1295px; /* Updated height */
+  background-color: rgba(255, 127, 80, 0.64);
+  border: 1px solid var(--color-black);
+  transform: rotate(-14.6deg) translate(-50%, -50%);
+  transform-origin: center;
+}
+
+.image-1-icon4 {
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  width: 582px;  /* Updated smaller width */
+  height: 598px; /* Updated smaller height */
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  mix-blend-mode: normal;
+}
+
+@media screen and (max-width: 767px) {
+  .log-in {
+    font-size: 1.5em;
+  }
+  .username input, .password input {
+    font-size: 0.9em;
+  }
+  .log-in1 {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .log-in {
+    font-size: 1.2em;
+  }
+  .username input, .password input {
+    font-size: 0.8em;
+  }
+  .log-in1 {
+    font-size: 0.8em;
+  }
+}
